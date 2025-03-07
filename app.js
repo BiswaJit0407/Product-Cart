@@ -16,7 +16,10 @@ let cartCount = 0;
 function addtocart() {
   const selectsize = document.querySelector('input[name="size"]:checked');
   if (!selectsize) {
-    alert("Please select a size");
+    document.querySelector(".buy-success").style.display="flex";
+    document.querySelector(
+      "#message"
+    ).innerHTML = `choose a size to add to cart`;
     return;
   }
   cartCount++;
@@ -33,16 +36,18 @@ function buynow() {
   const productname = document.querySelector(".title h2").textContent;
   
 
-  if (!selectsize) {
-    alert("Please select a size");
-  } else if (cartItems === 0) {
-    alert(
-      "Your cart is empty! Please add an item to the cart before purchasing."
-    );
+  
+   if (cartItems === 0) {
+    
+    document.querySelector(
+      "#message"
+    ).innerHTML = `Cart is Empty! Add items to Cart..`;
+   
+
   } else {
      document.querySelector(
       "#message"
-    ).innerHTML += `You have successfully purchased the "${productname}"! `;
+    ).innerHTML = `You have successfully purchased the "${productname}"! `;
   }
   document.querySelector(".buy-success").style.display="flex";
 }
