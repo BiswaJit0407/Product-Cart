@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Madrid Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar">
+      <img src="./images/Store-logo.png" alt="logo" />
+      
+      <div class="menu">
+        <div class="user"><i class="fa-solid fa-user"></i></div>
+        <div class="cart-icon" id="cartIcon">
+          <i class="fa-solid fa-cart-shopping" id="cart-logo"></i>
+          <p id="cart-count">0</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- product section -->
+
+    <section class="product-section">
+      <div class="product-images">
+        <img src="./images/Rm1.png" alt="product1" id="main-img" />
+        <div class="image-container">
+          <img src="./images/Rm1.png" alt="" onclick="changeimage(this, './images/rm1.png')" />
+          <img src="./images/rm2.png" alt="" onclick="changeimage(this,'./images/rm2.png')" />
+          <img src="./images/rm3.png" alt="" onclick="changeimage(this,'./images/rm3.png')" />
+          <img src="./images/rm4.png" alt="" onclick="changeimage(this,'./images/rm4.png')" />
+        </div>
+      </div>
+      <div class="line"></div>
+
+      <div class="product-title">
+        <div class="title">
+          <h2>Mbappe Jersey 2025 Edition</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+            cupiditate pariatur debitis tenetur officia.
+          </p>
+        </div>
+
+        <div class="price-section">
+          <h2 class="price">
+            Price:
+            <span class="discounted-price">$105.00</span>
+            <span class="original-price">$150.00</span>
+            <span class="discount">35% Off</span>
+          </h2>
+          <div class="rating-stars">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star-half-stroke"></i>
+            </div>
+            <a href="">200+ reviews</a>
+          </div>
+        </div>
+
+        <div class="size">
+          <h2>Choose Size:</h2>
+          <label><input type="radio" name="size" value="small" />S</label>
+          <label><input type="radio" name="size" value="medium" />M</label>
+          <label><input type="radio" name="size" value="large" />L</label>
+          <label><input type="radio" name="size" value="XL" />XL</label>
+        </div>
+
+        <div class="buttons">
+          <!-- <button class="buy" onclick="buynow()">Buy Now</button> -->
+          <button class="cart" onclick="addtocart()">Add To Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Add to Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay">
+      <div class="cart-over">
+        <h3>Shopping Cart</h3>
+        <ul id="cartItems"></ul>
+        <div id="cartBtn">
+          <button id="closeCart">Close</button>
+          <button id="buyNow">Buy</button>
+        </div>
+        
+      </div>
+    </div>
+  
+       <!-- Buy sucessfully -->
+        <div class="buy-success">
+          <div class="msg-show">
+            <h2 id="message"></h2>
+            <button id="closemsg">Ok</button>
+          </div>
+           
+        </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
