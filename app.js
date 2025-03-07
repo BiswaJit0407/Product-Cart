@@ -16,7 +16,7 @@ let cartCount = 0;
 function addtocart() {
   const selectsize = document.querySelector('input[name="size"]:checked');
   if (!selectsize) {
-    document.querySelector(".buy-success").style.display="flex";
+    document.querySelector(".buy-success").style.display = "flex";
     document.querySelector(
       "#message"
     ).innerHTML = `choose a size to add to cart`;
@@ -31,25 +31,23 @@ function addtocart() {
 }
 
 function buynow() {
-  const selectsize = document.querySelector('input[name="size"]:checked');
   const cartItems = document.querySelector("#cartItems").children.length;
   const productname = document.querySelector(".title h2").textContent;
-  
+  const cartItemsContainer = document.querySelector("#cartItems");
 
-  
-   if (cartItems === 0) {
-    
+  if (cartItems === 0) {
     document.querySelector(
       "#message"
     ).innerHTML = `Cart is Empty! Add items to Cart..`;
-   
-
   } else {
-     document.querySelector(
+    document.querySelector(
       "#message"
     ).innerHTML = `You have successfully purchased the "${productname}"! `;
+    cartItemsContainer.innerHTML = "";
+    cartCount = 0;
+    document.querySelector("#cart-count").textContent = cartCount;
   }
-  document.querySelector(".buy-success").style.display="flex";
+  document.querySelector(".buy-success").style.display = "flex";
 }
 
 function removeItem(button) {
@@ -66,13 +64,11 @@ document.getElementById("closeCart").addEventListener("click", () => {
   document.getElementById("cartOverlay").classList.remove("open");
 });
 
-
 document.getElementById("buyNow").addEventListener("click", () => {
   buynow();
   document.getElementById("cartOverlay").classList.remove("open");
 });
 
-
-document.getElementById("closemsg").addEventListener("click",()=>{
-  document.querySelector(".buy-success").style.display="none";
-})
+document.getElementById("closemsg").addEventListener("click", () => {
+  document.querySelector(".buy-success").style.display = "none";
+});
